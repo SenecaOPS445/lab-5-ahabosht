@@ -10,8 +10,10 @@ def add(number1, number2):
 
 def read_file(filename):
     try:
-        with open(filename, 'r') as file:
-            return file.readlines()
+        f = open(filename, 'r')
+        lines = f.readlines()
+        f.close()
+        return lines
     except (IOError, FileNotFoundError):
         return 'error: could not read file'
 
