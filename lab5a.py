@@ -2,12 +2,16 @@
 # Student ID: 127098218
 
 def read_file_string(file_name):
-    with open(file_name, 'r') as f:
-        return f.read()
+    f = open(file_name, 'r')
+    data = f.read()
+    f.close()
+    return data
 
 def read_file_list(file_name):
-    with open(file_name, 'r') as f:
-        return [line.strip() for line in f]
+    f = open(file_name, 'r')
+    data = [line.strip() for line in f]
+    f.close()
+    return data
 
 if __name__ == '__main__':
     file_name = 'data.txt'
